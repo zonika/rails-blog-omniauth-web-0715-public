@@ -40,18 +40,22 @@ end
 
 6. Next, we need to build a route that will redirect users to `/auth/:provider` (provider being declared in `omniauth.rb`).
 
-7. Once a user is authenticated, Omniauth sets a special hash (not to be confused with the ruby data structure) called an Authentication Hash. We need to set up an endpoint that matches the callback URL (which we set up when we registered our application on Github) which will be handled by `sessions#create`.
+7. Once a user is authenticated, Omniauth sets a special hash. In order to get back that data, we need to set up an endpoint that matches the callback URL (which we set up when we registered our application on Github) which will be handled by `sessions#create`.
 
 ##Controllers
 
+We will need to refactor our sessions and users controllers to include methods to handle our omniauth request and response.
+
 ###Sessions
 
-1. 
+###Users
 
 ##Changing our Users Table
 
-1. Before, our app had a column for a password digest, which held a users encrypted password. Instead, we're going to remove that column and instead store the following, which comes back via the omniauth callback we set up:
+1. Before, our app had a column for a password digest, which held a users encrypted password. Instead, we're going to remove that column and instead store the following, which comes back in the hash via the omniauth callback we set up:
 
 ## Resources
 
 [Ruby 003 Manuel's blog post on OAuth 2.0](http://manu3569.github.io/blog/2013/11/06/oauth-2-dot-0-what-you-need-to-know-about-it-for-building-your-next-app/)
+
+[Auth-Hash-Schema](https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema)
