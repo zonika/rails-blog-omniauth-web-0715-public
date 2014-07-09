@@ -8,6 +8,8 @@ resources: 3
 
 This is the sixth iteration of our Blog App.
 
+<em>Before anything</em>, note that when you generate models, controllers, etc, be sure to include this option, so that it skips tests (which we already have): `--no-test-framework`
+
 In our last iteration, we used Sessions and built our own log in system. Next, we're going to refactor that and create a log in system using OmniAuth. A user should be able to log in / sign up using their Github account. Omniauth allows us to pass user authentication to a third party (like Facebook, Twitter, or Github) instead of having to save a user's login credentials on our database.
 
 1. The [omniauth](https://github.com/intridea/omniauth) and [omniauth-github](https://github.com/intridea/omniauth-github) gems are in the Gemfile. Be sure to read the readmes for both.
