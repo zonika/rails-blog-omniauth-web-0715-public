@@ -18,9 +18,7 @@
     <p><%= comment.content %> </p>
   <% end %>
 
-<% if !user_signed_in? %>
-  <%= link_to "Log In to Comment!", login_path %>
-<% else %>
+<% if current_user %>
   <h4>Post a new comment:</h4>
   <%= form_for [@post, Comment.new] do |f| %>
     <div class="field">
@@ -34,9 +32,11 @@
       <%= f.submit %>
     </div>
   <% end %>
+<% else %>
+  <%= link_to "Log In to Comment!", login_path %>
 <% end %>
 
-<% if user_signed_in? %>
+<% if current_user %>
   <%= link_to 'Edit', edit_post_path(@post) %> |
 <% end %>
 <%= link_to 'Back', posts_path %>

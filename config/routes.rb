@@ -8,11 +8,11 @@ RailsBlog::Application.routes.draw do
   delete 'logout' => 'sessions#destroy', :as => 'log_out'
 
   resources :sessions
-  resources :users
-  resources :tags
+  resources :users, :only => [:new, :show, :index]
+  resources :tags, :only => [:show, :index]
   
   resources :posts do 
-    resources :comments
+    resources :comments, :only => [:new, :create]
   end
 
 end
