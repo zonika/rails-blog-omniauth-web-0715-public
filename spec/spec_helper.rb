@@ -20,15 +20,8 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
   config.order = "default"
   config.include Capybara::DSL
-  config.include LoginHelper, :type => :feature
 
   DatabaseCleaner.strategy = :truncation
-
-  config.before(:all) do 
-    @crookshanks = User.create(:name => "Crookshanks", :email => "crookshanks@cats.com", :password => "password", :password_confirmation => "password")
-    @kitten = User.new(:name => "Kitten", :email => "kitten@cats.com", :password => "kitten", :password_confirmation => "kitten")
-    @invalid_user = User.new(:name => nil, :email => "nil@nil.com", :password => "password", :password_confirmation => "password")
-  end
 
   config.after(:all) do 
     DatabaseCleaner.clean
