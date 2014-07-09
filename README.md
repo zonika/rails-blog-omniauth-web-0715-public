@@ -1,5 +1,5 @@
 ---
-tags: rails, omniauth, oauth, authentication, wip
+tags: rails, omniauth, oauth, authentication
 language: ruby
 resources: 3
 ---
