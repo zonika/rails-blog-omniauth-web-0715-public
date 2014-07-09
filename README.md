@@ -8,7 +8,7 @@ resources: 1
 
 This is the sixth iteration of our Blog App.
 
-In our last iteration, we used Sessions and built our own log in system. Next, we're going to refactor that and create a log in system using OmniAuth. A user should be able to log in / sign up using their Github account.
+In our last iteration, we used Sessions and built our own log in system. Next, we're going to refactor that and create a log in system using OmniAuth. A user should be able to log in / sign up using their Github account. Omniauth allows us to pass user authentication to a third party (like Facebook, Twitter, or Github) instead of having to save a user's login credentials on our database.
 
 1. The [omniauth](https://github.com/intridea/omniauth) and [omniauth-github](https://github.com/intridea/omniauth-github) gems are in the Gemfile. Be sure to read the readmes for both.
 
@@ -22,7 +22,7 @@ Your application registration should look something like this:
 
 3. We do not want our client_id and client_secret available for everyone to see in our codebase, yet it's information that is necessary for our app to work. One way we can handle this is through [Figaro](https://github.com/laserlemon/figaro).
 
-4. Run `rails generate figaro:install`. This creates the `config/application.yml` file and adds it to your .gitignore. Add your client id and client secret to this file.
+4. Run `rails generate figaro:install`. This creates the `config/application.yml` file and adds it to the .gitignore. Add your client_id and client_secret to this file.
 
 ##Setting up OmniAuth
 
@@ -42,13 +42,13 @@ end
 
 7. Once a user is authenticated, Omniauth sets a special hash. In order to get back that data, we need to set up an endpoint that matches the callback URL (which we set up when we registered our application on Github) which will be handled by `sessions#create`.
 
-##Controllers
+##Sessions Controller
 
-We will need to refactor our sessions and users controllers to include methods to handle our omniauth request and response.
+We will need to refactor our sessions controller to include methods to handle our omniauth request and response.
 
-###Sessions
+##Users Controller
 
-###Users
+The users controller will no longer be handling the creation of a new user.
 
 ##Changing our Users Table
 
