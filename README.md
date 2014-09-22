@@ -71,3 +71,4 @@ Changes various views to display links to logging in via Github, using our `curr
 [Auth-Hash-Schema](https://github.com/intridea/omniauth/wiki/Auth-Hash-Schema)
 
 [Rails OmniAuth Github Tutorial](http://natashatherobot.com/rails-omniauth-github-tutorial/)
+
