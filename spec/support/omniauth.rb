@@ -1,6 +1,6 @@
 OmniAuth.config.test_mode = true
 
-OmniAuth.config.mock_auth[:github_user] = OmniAuth::AuthHash.new(
+OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new(
 {"provider"=>"github",
  "uid"=>"3723552",
  "info"=>
