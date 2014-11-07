@@ -4,7 +4,7 @@ describe User do
 
   describe ".create_with_omniauth" do
 
-    let(:auth) { OmniAuth.config.mock_auth[:github_user] }
+    let(:auth) { OmniAuth.config.mock_auth[:github] }
 
     it 'initializes new users from github' do
       user = User.create_with_omniauth(auth)

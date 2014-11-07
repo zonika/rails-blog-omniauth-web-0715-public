@@ -1,6 +1,6 @@
 require_relative '../spec_helper.rb'
 
-describe SessionsController, :type => :feature do
+describe 'user log in with omniauth', :type => :feature do
   let(:auth) { OmniAuth.config.mock_auth[:github] }
 
   it 'can log in with github' do
