@@ -22,7 +22,7 @@ In our last iteration, we used Sessions and built our own log in system. Next, w
 
 3. We do not want our client_id and client_secret available for everyone to see in our codebase, yet it's information that is necessary for our app to work. One way we can handle this is through [Figaro](https://github.com/laserlemon/figaro).
 
-4. Run `rails generate figaro:install`. This creates the `config/application.yml` file and adds it to the .gitignore. Add your client_id and client_secret to this file.
+4. Run `figaro install` (make sure you run `bundle install` first). This creates the `config/application.yml` file and adds it to the .gitignore. Add your client_id and client_secret to this file.
 
 ##Setting up OmniAuth
 
