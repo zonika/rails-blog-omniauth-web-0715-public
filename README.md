@@ -1,9 +1,3 @@
----
-tags: rails, omniauth, oauth, authentication
-language: ruby
-resources: 3
----
-
 # Rails Blog: Signing in using Omniauth
 
 This is the sixth iteration of our Blog App.
